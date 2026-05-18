@@ -1,5 +1,5 @@
-? EXERCÕCIO 1 ó Captura de dados com POST (PHP)
-?? Objetivo: Aprender a receber dados enviados por formul·rio usando POST.
+? EXERC√çCIO 1 ‚Äî Captura de dados com POST (PHP)
+?? Objetivo: Aprender a receber dados enviados por formul√°rio usando POST.
 
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -11,12 +11,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	echo "Idade: $idade";
 
 } else {
-	echo "Acesso n„o permitido";
+	echo "Acesso n√£o permitido";
 }
 
 
-CEN¡RIO 2 ó Enviar dados via formul·rio HTML (POST)
-?? Exemplo de formul·rio HTML
+CEN√ÅRIO 2 ‚Äî Enviar dados via formul√°rio HTML (POST)
+?? Exemplo de formul√°rio HTML
 
 
 exercicio1.php
@@ -42,15 +42,15 @@ $resultados = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 
 
-ExercÌcios 2
+Exerc√≠cios 2
 Conceitos:
-DiferenÁa entre GET e POST
+Diferen√ßa entre GET e POST
 Uso de exit para controle de fluxo
 
 <?php
 
 if ($_SERVER['REQUEST_METHOD'] != 'POST') {
-	echo "Acesso n„o permitido";
+	echo "Acesso n√£o permitido";
 	exit;
 }
 
@@ -64,7 +64,7 @@ echo "Idade: $idade";
 
 
 Exercicio 3 : 
-C”DIGO EM PORTUGOL (para o aluno converter em PHP)
+C√ìDIGO EM PORTUGOL (para o aluno converter em PHP)
 
 algoritmo "MensagemBoasVindas"
 
@@ -77,11 +77,37 @@ inicio
    escreva("Digite seu nome: ")
    leia(nome)
 
-   // VerificaÁ„o se o nome foi informado
+   // Verifica√ß√£o se o nome foi informado
    se (nome <> "") entao
   	escreva("Bem-vindo(a), ", nome, "!")
    senao
-  	escreva("Nome n„o informado")
+  	escreva("Nome n√£o informado")
    fimse
 
 fimalgoritmo
+
+
+
+	
+<?php
+
+$host = "192.168.1.139";
+$banco = "jaime_inventario";
+$usuario = "root";
+$senha = "";
+
+try {
+	$pdo = new PDO(
+    	"mysql:host=$host;dbname=$banco;charset=utf8",
+    	$usuario,
+    	$senha
+	);
+
+	// Configura o PDO para mostrar erros
+	$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+	echo "‚úÖ Conex√£o realizada com sucesso";
+
+} catch (PDOException $e) {
+	echo "‚ùå Erro na conex√£o: " . $e->getMessage();
+}
